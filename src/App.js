@@ -1,37 +1,41 @@
-import "./App.css";
-import User from "./User";
+import React, { useState } from "react";
 
-function App() {
-  const names = ["Pedro", "Jake", "Jessica", "Mike", "Dustin", "Lucas"];
+const App = () => {
+  const [age, setAge] = useState(0);
+  const [userInput, setUserInput] = useState();
+  const [toggleText, setToggleText] = useState(true);
 
-  const users = [
-    { name: "Pedro", age: 21 },
-    { name: "Jake", age: 51 },
-    { name: "Jessica", age: 45 },
-  ];
+  const [count, setCount] = useState(0);
 
-  const planets = [
-    { name: "Mars", isGasPlanet: false },
-    { name: "Earth", isGasPlanet: false },
-    { name: "Jupiter", isGasPlanet: true },
-    { name: "Venus", isGasPlanet: false },
-    { name: "Neptune", isGasPlanet: true },
-    { name: "Uranus", isGasPlanet: true },
-  ];
+  const handleToggleText = () => {
+    setToggleText((prev) => !prev);
+  };
+
+  const showText = (e) => {
+    setUserInput(e.target.value);
+  };
+
+  const increaseAge = () => {
+    setAge((prev) => prev + 1);
+    console.log(age);
+  };
 
   return (
     <div className="App">
-      {users.map((e, key) => (
-        <User myKey={key} key={key} name={e.name} age={e.age} />
-      ))}
+      <input type="text" onChange={(e) => showText(e)} />
+      <p>{userInput}</p>
 
-      {planets
-        .filter((e) => e.isGasPlanet)
-        .map((e, key) => (
-          <h2 key={key}>{e.name}</h2>
-        ))}
+      <button onClick={handleToggleText}>Show/Hide Text</button>
+
+      {toggleText && <p>HI MY NAME IS PEDRO</p>}
+
+      <button onClick={() => setCount((prev) => prev + 1)}>Increase</button>
+      <button onClick={() => setCount((prev) => prev - 1)}>Decrease</button>
+      <button onClick={() => setCount(0)}>Set to Zero</button>
+
+      <p>{count}</p>
     </div>
   );
-}
+};
 
 export default App;
