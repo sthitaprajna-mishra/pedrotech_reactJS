@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import ToDo from "./components/ToDo";
+import React from "react";
+import Excuser from "./components/Excuser";
 
 const App = () => {
   return (
     <div className="App">
-      <ToDo />
+      <Excuser />
     </div>
   );
 };
