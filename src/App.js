@@ -1,10 +1,10 @@
 import React from "react";
-import Excuser from "./components/Excuser";
+import MainRouter from "./components/Router/MainRouter";
 
 const App = () => {
   return (
     <div className="App">
-      <Excuser />
+      <MainRouter />
     </div>
   );
 };
