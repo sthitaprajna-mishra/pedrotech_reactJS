@@ -1,10 +1,10 @@
 import React from "react";
-import MainRouter from "./components/Router/MainRouter";
+import Form from "./components/Form";
 
 const App = () => {
   return (
     <div className="App">
-      <MainRouter />
+      <Form />
     </div>
   );
 };

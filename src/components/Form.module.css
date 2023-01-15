@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 20rem;
+  margin: auto;
+}
+
+.form input[type="submit"] {
+  /* margin-left: 3rem; */
+  /* display: block; */
+  margin: auto;
+}
