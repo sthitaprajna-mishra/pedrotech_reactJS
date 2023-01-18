@@ -1,10 +1,20 @@
 import React from "react";
-import Form from "./components/Form";
+import Cat from "./components/UseQuery Hook/Cat";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => {
   return (
     <div className="App">
-      <Form />
+      <QueryClientProvider client={client}>
+        <Cat />
+      </QueryClientProvider>
     </div>
   );
 };
